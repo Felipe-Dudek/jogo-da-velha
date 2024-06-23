@@ -1,14 +1,21 @@
 body {
     background-color: #8a2be2;
     margin: 0;
+    font-family: fantasy;
 }
 
 h1 {
-    font-family: fantasy;
     color: #fff;
     font-size: 200px;
     height: auto;
     cursor: pointer;
+}
+
+a {
+    font-family: sans-serif;
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
 }
 
 .content{
@@ -20,6 +27,9 @@ h1 {
 .display-flex {
     display: flex;
 }
+.flex-column {
+    flex-direction: column;
+}
 
 .justify-center{
     justify-content: center;
@@ -27,6 +37,10 @@ h1 {
 
 .justify-between{
     justify-content: space-between;
+}
+
+.justify-end{
+    justify-content: flex-end;
 }
 
 .align-center {
