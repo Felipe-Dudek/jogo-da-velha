@@ -1,0 +1,28 @@
+.start-button {
+    transition: transform 0.7s;
+}
+
+.start-button:hover{
+    transform: scale(1.2);
+}
+
+.main-content-header{
+    width: 100vw;
+    height: 10vh;
+}
+
+.side-menu-button {
+    background-color: #fff;
+    width: 24px;
+    height: 4px;
+    margin-bottom: 4px;
+    transition: transform 0.7s;
+}
+
+.main-side-menu-button {
+    transition: transform 0.7s;
+}
+
+.main-side-menu-button:hover{
+    transform: scale(1.2);
+}
