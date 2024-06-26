@@ -26,7 +26,7 @@ export default class UI {
 
         const sideMenuButtonContainer = document.createElement('div');
         sideMenuButtonContainer.classList.add('main-side-menu-button', 'margin-left');
-        sideMenuButtonContainer.addEventListener('click', () => {
+        sideMenuButtonContainer.addEventListener('click',  () => {
             this.sideMenu();
         });
 
@@ -46,7 +46,7 @@ export default class UI {
         newGameButton.type = 'button';
         newGameButton.textContent = 'New Game';
         newGameButton.addEventListener('click', () => {
-            this.popupPlayername();
+            this.popupPlayerName();
         });
         marginRightDiv.appendChild(newGameButton);
 
@@ -71,11 +71,50 @@ export default class UI {
         this.idDiv.appendChild(mainGameContent);
     }
 
-    sideMenu(){
-        alert("side manu open");
+    sideMenu(playersList){
+        const sideMenu = document.createElement('div');
+        sideMenu.classList.add('side-menu');
+
+        const closeButtonContainer = document.createElement('div');
+        closeButtonContainer.classList.add('display-flex', 'justify-end', 'margin-right');
+
+        const closeButton = document.createElement('a');
+        closeButton.addEventListener('click', () => {
+            this.clearDOM();
+            this.mainContent();
+        });
+        closeButton.textContent = 'X';
+
+        closeButtonContainer.appendChild(closeButton);
+        sideMenu.appendChild(closeButtonContainer);
+
+        const searchInput = document.createElement('input');
+        searchInput.classList.add('margin-left', 'margin-right', 'margin-top');
+        searchInput.setAttribute('type', 'text');
+        searchInput.setAttribute('placeholder', 'Search Player...');
+
+        sideMenu.appendChild(searchInput);
+
+        const searchButton = document.createElement('button');
+        searchButton.classList.add('search-button');
+        searchButton.setAttribute('type', 'button');
+        searchButton.addEventListener('click', () => {
+            alert('search player')
+        });
+        searchButton.textContent = 'Search';
+
+        sideMenu.appendChild(searchButton);
+
+        this.idDiv.appendChild(sideMenu);
+
+        const overlay = document.createElement('div');
+        overlay.setAttribute('id', 'overlay');
+        overlay.classList.add('overlay');
+
+        this.idDiv.appendChild(overlay);
     }
 
-    popupPlayername(){
+    popupPlayerName(){
         const popupNewGame = document.createElement('div');
         popupNewGame.classList.add('popup-new-game');
 
@@ -87,7 +126,7 @@ export default class UI {
         closeButton.classList.add('margin-right');
         closeButton.textContent = 'X';
         closeButton.addEventListener('click', () => {
-            this.clearDOM()
+            this.clearDOM();
             this.mainContent();
         });
 
@@ -139,9 +178,8 @@ export default class UI {
         const startButton = document.createElement('button');
         startButton.classList.add('start-game-button');
         startButton.textContent = 'Start';
-        startButton.addEventListener('click', () => {
-            this.startGame()
-        });
+        startButton.setAttribute('id', 'start-button');
+        startButton.setAttribute('onclick', 'startGame()');
 
         startContainer.appendChild(startButton);
 
@@ -155,7 +193,73 @@ export default class UI {
         this.idDiv.appendChild(overlay);
     }
 
-    startGame() {
-        alert("start game")
+    startGame(scorePlayer1, scorePlayer2, playerName) {
+
+        const mainContentHeader = document.createElement('div');
+        mainContentHeader.classList.add('main-content-header', 'display-flex', 'justify-between', 'align-center');
+
+        const divHidden = document.createElement('div');
+        divHidden.classList.add('main-side-menu-button', 'margin-left');
+
+        mainContentHeader.appendChild(divHidden);
+
+        const scoreContainer = document.createElement('div');
+        const scoreText = document.createElement('h2');
+        scoreText.textContent = `${scorePlayer1} X ${scorePlayer2}`;
+        scoreContainer.appendChild(scoreText);
+
+        mainContentHeader.appendChild(scoreContainer);
+
+        const cancelGameButtonContainer = document.createElement('div');
+        cancelGameButtonContainer.classList.add('margin-right');
+
+        const cancelGameButton = document.createElement('button');
+        cancelGameButton.classList.add('new-game-button');
+        cancelGameButton.setAttribute('type', 'button');
+        cancelGameButton.addEventListener('click', () => {
+            this.popupPlayerName();
+            this.startClick();
+        });
+        cancelGameButton.textContent = 'Cancel Game';
+
+        cancelGameButtonContainer.appendChild(cancelGameButton);
+        mainContentHeader.appendChild(cancelGameButtonContainer);
+
+        this.idDiv.appendChild(mainContentHeader);
+
+        const mainGameContent = document.createElement('div');
+        mainGameContent.classList.add('main-game-content', 'display-flex', 'justify-center', 'align-center', 'margin-top');
+
+        const gridContainer = document.createElement('div');
+        gridContainer.classList.add('grid-container');
+
+        for (let i = 1; i <= 9; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.setAttribute('id', `id${i}`);
+            cell.setAttribute('onclick', `cellCLick(${i})`)
+            gridContainer.appendChild(cell);
+        }
+
+        mainGameContent.appendChild(gridContainer);
+        this.idDiv.appendChild(mainGameContent);
+
+        const footer = document.createElement('div');
+        footer.classList.add('display-flex', 'justify-center', 'align-center');
+
+        const footerText = document.createElement('h2');
+        footerText.textContent = `${playerName}`;
+        footer.appendChild(footerText);
+
+        this.idDiv.appendChild(footer);
+    }
+
+    addSimble(id){
+        const simble = document.getElementById(`id${id}`);
+
+        const content = document.createElement('a');
+        content.innerText = id;
+
+        simble.appendChild(content);
     }
 }
