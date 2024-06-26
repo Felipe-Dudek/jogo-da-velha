@@ -1,5 +1,7 @@
 export default class Player {
-    constructor(){
-        console.log("Player Created")
+    constructor(playerName, simble){
+        this.playerName = playerName;
+        this.simble = simble;
+        this.score = 0;
     }
 }
