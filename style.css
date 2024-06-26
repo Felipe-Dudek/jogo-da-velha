@@ -11,11 +11,21 @@ h1 {
     cursor: pointer;
 }
 
+h2 {
+    font-size: 50px;
+    color: #fff;
+}
+
 a {
     font-family: sans-serif;
     text-decoration: none;
     color: inherit;
     font-size: 20px;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .content{
