@@ -71,7 +71,7 @@ export default class UI {
         this.idDiv.appendChild(mainGameContent);
     }
 
-    sideMenu(playersList){
+sideMenu(playersList){
         const sideMenu = document.createElement('div');
         sideMenu.classList.add('side-menu');
 
@@ -87,23 +87,6 @@ export default class UI {
 
         closeButtonContainer.appendChild(closeButton);
         sideMenu.appendChild(closeButtonContainer);
-
-        const searchInput = document.createElement('input');
-        searchInput.classList.add('margin-left', 'margin-right', 'margin-top');
-        searchInput.setAttribute('type', 'text');
-        searchInput.setAttribute('placeholder', 'Search Player...');
-
-        sideMenu.appendChild(searchInput);
-
-        const searchButton = document.createElement('button');
-        searchButton.classList.add('search-button');
-        searchButton.setAttribute('type', 'button');
-        searchButton.addEventListener('click', () => {
-            alert('search player')
-        });
-        searchButton.textContent = 'Search';
-
-        sideMenu.appendChild(searchButton);
 
         this.idDiv.appendChild(sideMenu);
 
