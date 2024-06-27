@@ -3,5 +3,6 @@ export default class Player {
         this.playerName = playerName;
         this.simble = simble;
         this.score = 0;
+        this.timeToPlay = false;
     }
 }
