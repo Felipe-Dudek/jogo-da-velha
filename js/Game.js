@@ -1,11 +1,24 @@
 export default class Game {
-    constructor(player1, player2){
-        this.player1 = player1;
-        this.player2 = player2;
+    constructor(){
         this.board = Array(9).fill(null);
+        this.isGameOver = false;
     }
 
-    clickCell(cell){
-        alert(`clickou na célula ${cell}`)
+    resetGame(){
+        this.board = Array(9).fill(null);
+        this.isGameOver = false;
+    }
+
+checkCellClick(cell, simble){
+        let erro = false;
+        if(this.board[cell] === null){
+            this.board[cell] = simble;
+            this.isGameOver = this.checkWin();
+            return !erro
+        }
+        else{
+            alert("This cell is checked");
+            return erro
+        }
     }
 }
