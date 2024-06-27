@@ -237,6 +237,60 @@ sideMenu(playersList){
         this.idDiv.appendChild(footer);
     }
 
+     winGame(winPlayer){
+        const playAgain = document.createElement('div');
+        playAgain.classList.add('popup-new-game');
+
+        const mainPopup = document.createElement('div');
+        mainPopup.classList.add('win-text', 'display-flex', 'justify-center');
+
+        const playerContainer = document.createElement('div');
+        playerContainer.classList.add('display-flex', 'margin-right', 'margin-left');
+
+        const textWin = document.createElement('h3');
+        if(winPlayer === "Tied"){
+            textWin.innerText = `${winPlayer}`;
+        }else{
+            textWin.innerText = `${winPlayer} Win`;
+        }
+        
+        playerContainer.appendChild(textWin);
+
+        mainPopup.appendChild(playerContainer);
+
+        playAgain.appendChild(mainPopup);
+
+        const PlayContainer = document.createElement('div');
+        PlayContainer.classList.add('start', 'display-flex', 'justify-between', 'margin-right', 'margin-top');
+
+        const closeButton = document.createElement('button');
+        closeButton.classList.add('start-game-button', 'margin-left');
+        closeButton.textContent = 'Stop';
+        closeButton.setAttribute('id', 'start-button');
+        closeButton.addEventListener('click', () => {
+            this.clearDOM();
+            this.mainContent();
+        });
+
+        const PlayButton = document.createElement('button');
+        PlayButton.classList.add('start-game-button', 'margin-right');
+        PlayButton.textContent = 'Play Again';
+        PlayButton.setAttribute('id', 'start-button');
+        PlayButton.setAttribute('onclick', 'continueGame()');
+
+        PlayContainer.appendChild(closeButton);
+        PlayContainer.appendChild(PlayButton);
+
+        playAgain.appendChild(PlayContainer);
+
+        const overlay = document.createElement('div');
+        overlay.id = 'overlay';
+        overlay.classList.add('overlay');
+
+        this.idDiv.appendChild(playAgain);
+        this.idDiv.appendChild(overlay);
+    }
+
     addSimble(id){
         const simble = document.getElementById(`id${id}`);
 
