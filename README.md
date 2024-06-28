@@ -35,14 +35,20 @@ Todas as partidas ganhas pelos jogadores são armazenadas em memória. Assim, se
 
 Para organizar as classes, utilizamos o draw.io para desenhá-las. Abaixo estão as imagens de todas as classes:
 
-![Diagrama de Classes](caminho/para/imagem)
+![Diagrama de Classes Game](class/game)
+![Diagrama de Classes Player](class/player)
+![Diagrama de Classes UI](class/ui)
 
 ## Imagens das Interfaces
 
 Abaixo você encontrará as imagens de todas as interfaces:
 
-![Interface 1](caminho/para/imagem)
-![Interface 2](caminho/para/imagem)
+![Interface 1](screen/Initial)
+![Interface 2](screen/start)
+![Interface 3](screen/rank)
+![Interface 4](screen/PlayerName)
+![Interface 5](screen/inGame)
+![Interface 6](screen/win)
 
 ---
 
