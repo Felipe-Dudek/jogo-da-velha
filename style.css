@@ -16,11 +16,21 @@ h2 {
     color: #fff;
 }
 
+h3 {
+    font-size: 40px;
+    color: #000;
+}
+
 a {
     font-family: sans-serif;
     text-decoration: none;
     color: inherit;
     font-size: 20px;
+}
+
+li {
+    list-style-type: none;
+    font-size: 30px;
 }
 
 button:focus {
@@ -47,6 +57,10 @@ button:focus {
 
 .justify-between{
     justify-content: space-between;
+}
+
+.justify-start{
+    justify-content: start;
 }
 
 .justify-end{
