@@ -71,7 +71,7 @@ export default class UI {
         this.idDiv.appendChild(mainGameContent);
     }
 
-sideMenu(playersList){
+    sideMenu(playersList){
         const sideMenu = document.createElement('div');
         sideMenu.classList.add('side-menu');
 
@@ -88,6 +88,21 @@ sideMenu(playersList){
         closeButtonContainer.appendChild(closeButton);
         sideMenu.appendChild(closeButtonContainer);
 
+        const listPlayers = document.createElement('div');
+        listPlayers.classList.add('display-flex', 'justify-start', 'margin-left');
+
+        const list = document.createElement('ul');
+
+        playersList.forEach(players => {
+            const listAux = document.createElement('li');
+            listAux.innerText = `Score: ${players.score} - ${players.name}`
+            list.appendChild(listAux);
+        });
+
+        listPlayers.appendChild(list);
+
+        sideMenu.appendChild(listPlayers);
+
         this.idDiv.appendChild(sideMenu);
 
         const overlay = document.createElement('div');
@@ -96,8 +111,7 @@ sideMenu(playersList){
 
         this.idDiv.appendChild(overlay);
     }
-
-popupPlayerName(){
+    popupPlayerName(){
         const popupNewGame = document.createElement('div');
         popupNewGame.classList.add('popup-new-game');
 
@@ -175,3 +189,4 @@ popupPlayerName(){
         this.idDiv.appendChild(popupNewGame);
         this.idDiv.appendChild(overlay);
     }
+}
