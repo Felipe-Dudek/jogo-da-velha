@@ -27,7 +27,7 @@ export default class UI {
         const sideMenuButtonContainer = document.createElement('div');
         sideMenuButtonContainer.classList.add('main-side-menu-button', 'margin-left');
         sideMenuButtonContainer.addEventListener('click',  () => {
-            this.sideMenu();
+            getLocalStorage();
         });
 
         for (let i = 0; i < 3; i++) {
@@ -58,7 +58,7 @@ export default class UI {
         const gridContainer = document.createElement('div');
         gridContainer.classList.add('grid-container');
 
-        for (let i = 1; i <= 9; i++) {
+        for (let i = 0; i <= 8; i++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
             cell.id = `id${i.toString()}`;
@@ -111,6 +111,7 @@ export default class UI {
 
         this.idDiv.appendChild(overlay);
     }
+
     popupPlayerName(){
         const popupNewGame = document.createElement('div');
         popupNewGame.classList.add('popup-new-game');
@@ -189,7 +190,7 @@ export default class UI {
         this.idDiv.appendChild(popupNewGame);
         this.idDiv.appendChild(overlay);
     }
-    
+
     startGame() {
         const mainContentHeader = document.createElement('div');
         mainContentHeader.classList.add('main-content-header', 'display-flex', 'justify-between', 'align-center');
@@ -258,11 +259,11 @@ export default class UI {
 
         const textWin = document.createElement('h3');
         if(winPlayer === "Tied"){
-            textWin.innerText = ${winPlayer};
+            textWin.innerText = `${winPlayer}`;
         }else{
-            textWin.innerText = ${winPlayer} Win;
+            textWin.innerText = `${winPlayer} Win`;
         }
-
+        
         playerContainer.appendChild(textWin);
 
         mainPopup.appendChild(playerContainer);
