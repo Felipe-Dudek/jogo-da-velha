@@ -55,9 +55,45 @@ function cellClick(id){
     }
 }
 
+function saveLocalStorage(name, score){
+    const localData = localStorage.getItem('players');
+    if (localData === null) {
+        const players = [{ name: name, score: score }];
+        localStorage.setItem('players', JSON.stringify(players));
+    } else {
+        const players = JSON.parse(localData);
+        let playerFound = false;
+        players.forEach(player => {
+            if (player.name === name) {
+                player.score += 1;
+                playerFound = true;
+            }
+        });
+        if (!playerFound) {
+            players.push({ name: name, score: score });
+        }
+        localStorage.setItem('players', JSON.stringify(players));
+    }
+}
+
+function getLocalStorage(){
+    const localData = localStorage.getItem('players');
+    if(localData === null){
+        ui.sideMenu();
+    } else {
+        const players = JSON.parse(localData);
+        ui.sideMenu(players);
+    }
+}
+
 let player1;
 let player2;
 let game;
 const ui = new UI();
 
 ui.initialScreen();
+
+window.startGame = startGame;
+window.cellCLick = cellClick;
+window.continueGame = continueGame;
+window.getLocalStorage = getLocalStorage;
