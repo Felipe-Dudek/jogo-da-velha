@@ -37,7 +37,7 @@ export default class Game {
         return this.isGameOver;
     }
 
-checkCellClick(cell, simble){
+    checkCellClick(cell, simble){
         let erro = false;
         if(this.board[cell] === null){
             this.board[cell] = simble;
