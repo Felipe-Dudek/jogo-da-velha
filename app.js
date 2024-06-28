@@ -5,7 +5,7 @@ import UI from './js/UI.js';
 function startGame(){
     const player1Name = document.getElementById('player1');
     const player2Name = document.getElementById('player2');
-
+    
     ui.clearDOM();
 
     player1 = new Player(player1Name.value, 'X');
@@ -51,7 +51,7 @@ function cellClick(id){
         player2.timeToPlay = !player2.timeToPlay;
         ui.changePlayer(player1.timeToPlay ? player1.playerName : player2.playerName);
         ui.changeScore(player1.score, player2.score, player1.playerName, player2.playerName);
-        ui.addSimble(id, player1.timeToPlay ? player1.simble : player2.simble);
+        ui.addSimble(id, player1.timeToPlay ? player1.simble : player2.simble);   
     }
 }
 
