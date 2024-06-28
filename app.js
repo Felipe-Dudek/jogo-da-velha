@@ -30,3 +30,10 @@ function continueGame(){
     ui.changePlayer(player1.timeToPlay ? player1.playerName : player2.playerName);
     ui.changeScore(player1.score, player2.score, player1.playerName, player2.playerName);
 }
+
+let player1;
+let player2;
+let game;
+const ui = new UI();
+
+ui.initialScreen();
