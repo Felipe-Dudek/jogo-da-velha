@@ -189,9 +189,8 @@ export default class UI {
         this.idDiv.appendChild(popupNewGame);
         this.idDiv.appendChild(overlay);
     }
-}
-
-startGame() {
+    
+    startGame() {
         const mainContentHeader = document.createElement('div');
         mainContentHeader.classList.add('main-content-header', 'display-flex', 'justify-between', 'align-center');
 
@@ -246,7 +245,8 @@ startGame() {
 
         this.idDiv.appendChild(footer);
     }
-winGame(winPlayer){
+
+    winGame(winPlayer){
         const playAgain = document.createElement('div');
         playAgain.classList.add('popup-new-game');
 
@@ -299,3 +299,26 @@ winGame(winPlayer){
         this.idDiv.appendChild(playAgain);
         this.idDiv.appendChild(overlay);
     }
+
+    changePlayer(playerName){
+        const player = document.getElementById(`player-name`);
+
+        player.innerText = playerName;
+    }
+
+    changeScore(scorePlayer1, scorePlayer2, player1, player2){
+        const scoreText = document.getElementById(`score-text`);
+
+        scoreText.innerText = `${player1} ${scorePlayer1} X ${scorePlayer2} ${player2}`;
+    }
+
+    addSimble(id, simble){
+        const simblePlayer = document.getElementById(`id${id}`);
+
+        const content = document.createElement('a');
+        content.classList.add('simble-game');
+        content.innerText = simble;
+
+        simblePlayer.appendChild(content);
+    }
+}
