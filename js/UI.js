@@ -93,11 +93,17 @@ export default class UI {
 
         const list = document.createElement('ul');
 
-        playersList.forEach(players => {
+        if(playersList === null) {
             const listAux = document.createElement('li');
-            listAux.innerText = `Score: ${players.score} - ${players.name}`
+            listAux.innerText = `No players...`
             list.appendChild(listAux);
-        });
+        } else {
+            playersList.forEach(players => {
+                const listAux = document.createElement('li');
+                listAux.innerText = `W: ${players.win} - T: ${players.tie} - L: ${players.lose} - ${players.name}`
+                list.appendChild(listAux);
+            });
+        }
 
         listPlayers.appendChild(list);
 
