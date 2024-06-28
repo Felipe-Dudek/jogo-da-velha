@@ -20,7 +20,6 @@
 }
 
 .main-side-menu-button {
-    width: 20vw;
     transition: transform 0.7s;
 }
 
@@ -88,50 +87,50 @@
     align-items: center;
 }
 
+#id0 {
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
 #id1 {
+    border-left: 3px solid black;
     border-right: 3px solid black;
     border-bottom: 3px solid black;
 }
 
 #id2 {
     border-left: 3px solid black;
-    border-right: 3px solid black;
     border-bottom: 3px solid black;
 }
 
 #id3 {
-    border-left: 3px solid black;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
     border-bottom: 3px solid black;
 }
 
 #id4 {
-    border-top: 3px solid black;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
+    border: 3px solid black;
 }
 
 #id5 {
-    border: 3px solid black;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
 }
 
 #id6 {
     border-top: 3px solid black;
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
+    border-right: 3px solid black;
 }
 
 #id7 {
     border-top: 3px solid black;
-    border-right: 3px solid black;
-}
-
-#id8 {
-    border-top: 3px solid black;
     border-left: 3px solid black;
     border-right: 3px solid black;
 }
 
-#id9 {
+#id8 {
     border-top: 3px solid black;
     border-left: 3px solid black;
 }
@@ -179,4 +178,14 @@ input {
     border: 0px;
     padding: 5px;
     border-radius: 4px;
+}
+
+.win-text {
+    width: 100%;
+    height: 70%;
+}
+
+.simble-game {
+    font-size: 100px !important;
+    color: #fff !important;
 }
