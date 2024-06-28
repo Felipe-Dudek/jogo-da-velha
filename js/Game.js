@@ -8,6 +8,7 @@ export default class Game {
         this.board = Array(9).fill(null);
         this.isGameOver = false;
     }
+
     checkWin(){
         const winningCombinations = [
             [0, 1, 2],
