@@ -1,20 +1,49 @@
-Trabalho de front end
+# Jogo da Velha - Trabalho de Front End
 
-Jogo da velha
+## Descrição do Projeto
 
-O app foi pensado para que o usuário tenha uma experiencia intuitiva e de facil acesso.
+O aplicativo foi desenvolvido para proporcionar ao usuário uma experiência intuitiva e de fácil acesso.
 
-Todo o app foi desenhado na plataforma Figma antes da inicialização do projeto, a aplicação em si terá somente uma página onde seu conteúdo será dinamicamente controlado por uma classe, abaixo você encontrará as imagens de todas as interfaces:
+Antes de iniciar o desenvolvimento, todo o design foi elaborado na plataforma Figma. A aplicação possui apenas uma página, cujo conteúdo é dinamicamente controlado por uma classe. Abaixo estão as imagens de todas as interfaces:
 
-Para a melhor organização do software, utilizamos o paradigma orientado a objeto, cada classe criada está disposta em arquivos separados para a melhor visualização e manutenção do código fonte.
-Nesse projeto utilizamos 3 classes: Player, Game e UI
+## Estrutura do Projeto
 
-Player: classe responsável por armazenar o nome do jogador, qual o simbolo que o jogador utilizará na rodada atual e a quantidade de partidas ganhas no jogo atual. 
+Para uma melhor organização, utilizamos o paradigma de programação orientado a objetos. Cada classe foi criada em arquivos separados, facilitando a visualização e manutenção do código fonte.
 
-Game: classe responsável por armazenar a informação do jogo atual (tabela) e placar atual dos players, iniciar o game, verificar se houve ganhador e quem ganhou, verificar celulas disponiveis e reiniciar o game.
+### Classes Utilizadas
 
-UI: classe responsável por montar todo o UI, desde o game em si, até a tabela de ranking.
+1. **Player**
+   - Armazena o nome do jogador.
+   - Define o símbolo que o jogador utilizará na rodada atual.
+   - Registra a quantidade de partidas ganhas no jogo atual.
 
-Todas as partidas ganhas pelo player serão armazenadas em memoria para caso posteriormente ele venha jogar novamente o saldo não se perca, no final de cada partida as vitórias serão somadas em um rank geral onde será possivel ver a posição de determinado player e quem está no topo da tabela.
+2. **Game**
+   - Armazena as informações do jogo atual (tabela) e o placar dos jogadores.
+   - Inicia o jogo.
+   - Verifica se houve um ganhador e quem foi o vencedor.
+   - Verifica as células disponíveis.
+   - Reinicia o jogo.
 
-Para organizar as classes, foi utilizado o draw.io para desenhalas, abaixou você encotrará as imagens de todas as classes: 
+3. **UI**
+   - Monta toda a interface do usuário, incluindo o jogo em si e a tabela de ranking.
+
+### Persistência de Dados
+
+Todas as partidas ganhas pelos jogadores são armazenadas em memória. Assim, se o jogador retornar posteriormente, seu saldo de vitórias não será perdido. Ao final de cada partida, as vitórias são somadas em um ranking geral, onde é possível visualizar a posição de cada jogador e quem está no topo da tabela.
+
+## Diagramas de Classes
+
+Para organizar as classes, utilizamos o draw.io para desenhá-las. Abaixo estão as imagens de todas as classes:
+
+![Diagrama de Classes](caminho/para/imagem)
+
+## Imagens das Interfaces
+
+Abaixo você encontrará as imagens de todas as interfaces:
+
+![Interface 1](caminho/para/imagem)
+![Interface 2](caminho/para/imagem)
+
+---
+
+Este README foi criado para proporcionar uma visão geral clara e organizada do projeto "Jogo da Velha". Se tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato.
