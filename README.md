@@ -43,8 +43,8 @@ Para organizar as classes, utilizamos o draw.io para desenhá-las. Abaixo estão
 
 Abaixo você encontrará as imagens de todas as interfaces:
 
-![Interface 1](screen/Initial.png)
-![Interface 2](screen/start.png)
+![Interface 1](screen/start.png)
+![Interface 2](screen/Initial.png)
 ![Interface 3](screen/rank.png)
 ![Interface 4](screen/PlayerName.png)
 ![Interface 5](screen/inGame.png)
