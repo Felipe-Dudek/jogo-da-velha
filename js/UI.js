@@ -190,3 +190,59 @@ export default class UI {
         this.idDiv.appendChild(overlay);
     }
 }
+
+startGame() {
+        const mainContentHeader = document.createElement('div');
+        mainContentHeader.classList.add('main-content-header', 'display-flex', 'justify-between', 'align-center');
+
+        const scoreContainer = document.createElement('div');
+        scoreContainer.classList.add('margin-left');
+        const scoreText = document.createElement('h2');
+        scoreText.setAttribute('id', 'score-text');
+        scoreContainer.appendChild(scoreText);
+
+        mainContentHeader.appendChild(scoreContainer);
+
+        const cancelGameButtonContainer = document.createElement('div');
+        cancelGameButtonContainer.classList.add('margin-right');
+
+        const cancelGameButton = document.createElement('button');
+        cancelGameButton.classList.add('new-game-button');
+        cancelGameButton.setAttribute('type', 'button');
+        cancelGameButton.addEventListener('click', () => {
+            this.clearDOM();
+            this.mainContent();
+        });
+        cancelGameButton.textContent = 'Cancel Game';
+
+        cancelGameButtonContainer.appendChild(cancelGameButton);
+        mainContentHeader.appendChild(cancelGameButtonContainer);
+
+        this.idDiv.appendChild(mainContentHeader);
+
+        const mainGameContent = document.createElement('div');
+        mainGameContent.classList.add('main-game-content', 'display-flex', 'justify-center', 'align-center', 'margin-top');
+
+        const gridContainer = document.createElement('div');
+        gridContainer.classList.add('grid-container');
+
+        for (let i = 0; i <= 8; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.setAttribute('id', `id${i}`);
+            cell.setAttribute('onclick', `cellCLick(${i})`)
+            gridContainer.appendChild(cell);
+        }
+
+        mainGameContent.appendChild(gridContainer);
+        this.idDiv.appendChild(mainGameContent);
+
+        const footer = document.createElement('div');
+        footer.classList.add('display-flex', 'justify-center', 'align-center');
+
+        const footerText = document.createElement('h2');
+        footerText.setAttribute('id', 'player-name');
+        footer.appendChild(footerText);
+
+        this.idDiv.appendChild(footer);
+    }
